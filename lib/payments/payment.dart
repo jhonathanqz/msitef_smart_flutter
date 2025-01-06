@@ -47,6 +47,7 @@ class Payment {
         String? otp,
         String? enabledTransactions,
         String? automationDocument,
+        String? tokenRegistroTls,
       }) {
         return {
           'modalidade': modalidade,
@@ -66,6 +67,7 @@ class Payment {
           'otp': otp,
           'enabledTransactions': enabledTransactions,
           'automationDocument': automationDocument,
+          'tokenRegistroTls': tokenRegistroTls,
         };
       }
 
@@ -88,6 +90,7 @@ class Payment {
         otp: mSitefParams.otp,
         enabledTransactions: mSitefParams.enabledTransactions,
         automationDocument: mSitefParams.automationDocument,
+        tokenRegistroTls: mSitefParams.tokenRegistroTls ?? '',
       );
 
       final resultTransaction = await channel.invokeMethod(
@@ -117,6 +120,7 @@ class Payment {
     required String otp,
     required String enabledTransactions,
     required String automationDocument,
+    String? tokenRegistroTls,
   }) async {
     try {
       Map<String, dynamic> lineToMethodChannel({
@@ -129,6 +133,7 @@ class Payment {
         String? otp,
         String? enabledTransactions,
         String? automationDocument,
+        String? tokenRegistroTlsParams,
       }) {
         return {
           'ipSitef': ipSitef,
@@ -140,6 +145,7 @@ class Payment {
           'otp': otp,
           'enabledTransactions': enabledTransactions,
           'automationDocument': automationDocument,
+          'tokenRegistroTls': tokenRegistroTlsParams,
         };
       }
 
@@ -153,6 +159,7 @@ class Payment {
         otp: otp,
         enabledTransactions: enabledTransactions,
         automationDocument: automationDocument,
+        tokenRegistroTlsParams: tokenRegistroTls,
       );
 
       final resultTransaction = await channel.invokeMethod(

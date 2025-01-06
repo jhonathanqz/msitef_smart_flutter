@@ -21,6 +21,7 @@ class MSitefParams {
   final String? otp;
   final String? enabledTransactions;
   final String? automationDocument;
+  final String? tokenRegistroTls;
 
   MSitefParams({
     required this.modalidade,
@@ -40,6 +41,7 @@ class MSitefParams {
     this.otp,
     this.enabledTransactions,
     this.automationDocument,
+    this.tokenRegistroTls,
   });
 
   MSitefParams copyWith({
@@ -60,6 +62,7 @@ class MSitefParams {
     String? otp,
     String? enabledTransactions,
     String? automationDocument,
+    String? tokenRegistroTls,
   }) {
     return MSitefParams(
       modalidade: modalidade ?? this.modalidade,
@@ -79,6 +82,7 @@ class MSitefParams {
       otp: otp ?? this.otp,
       enabledTransactions: enabledTransactions ?? this.enabledTransactions,
       automationDocument: automationDocument ?? this.automationDocument,
+      tokenRegistroTls: tokenRegistroTls ?? this.tokenRegistroTls,
     );
   }
 
@@ -101,6 +105,7 @@ class MSitefParams {
       'otp': otp,
       'enabledTransactions': enabledTransactions,
       'automationDocument': automationDocument,
+      'tokenRegistroTls': tokenRegistroTls,
     };
   }
 
@@ -123,6 +128,7 @@ class MSitefParams {
       otp: map['otp'] != null ? map['otp'] as String : null,
       enabledTransactions: map['enabledTransactions'] != null ? map['enabledTransactions'] as String : null,
       automationDocument: map['automationDocument'] != null ? map['automationDocument'] as String : null,
+      tokenRegistroTls: map['tokenRegistroTls'] != null ? map['tokenRegistroTls'] as String : null,
     );
   }
 
@@ -132,18 +138,18 @@ class MSitefParams {
 
   @override
   String toString() {
-    return 'MSitefParams(modalidade: $modalidade, value: $value, couponNumber: $couponNumber, dateFiscal: $dateFiscal, hourFiscal: $hourFiscal, operador: $operador, params: $params, ipSitef: $ipSitef, storeId: $storeId, terminalId: $terminalId, paramsAdd: $paramsAdd, companyDocument: $companyDocument, comExternal: $comExternal, isDoubleValidation: $isDoubleValidation, otp: $otp, enabledTransactions: $enabledTransactions, automationDocument: $automationDocument)';
+    return 'MSitefParams(modalidade: $modalidade, value: $value, couponNumber: $couponNumber, dateFiscal: $dateFiscal, hourFiscal: $hourFiscal, operador: $operador, params: $params, ipSitef: $ipSitef, storeId: $storeId, terminalId: $terminalId, paramsAdd: $paramsAdd, companyDocument: $companyDocument, comExternal: $comExternal, isDoubleValidation: $isDoubleValidation, otp: $otp, enabledTransactions: $enabledTransactions, automationDocument: $automationDocument, tokenRegistroTls: $tokenRegistroTls)';
   }
 
   @override
   bool operator ==(covariant MSitefParams other) {
     if (identical(this, other)) return true;
 
-    return other.modalidade == modalidade && other.value == value && other.couponNumber == couponNumber && other.dateFiscal == dateFiscal && other.hourFiscal == hourFiscal && other.operador == operador && other.params == params && other.ipSitef == ipSitef && other.storeId == storeId && other.terminalId == terminalId && other.paramsAdd == paramsAdd && other.companyDocument == companyDocument && other.comExternal == comExternal && other.isDoubleValidation == isDoubleValidation && other.otp == otp && other.enabledTransactions == enabledTransactions && other.automationDocument == automationDocument;
+    return other.modalidade == modalidade && other.value == value && other.couponNumber == couponNumber && other.dateFiscal == dateFiscal && other.hourFiscal == hourFiscal && other.operador == operador && other.params == params && other.ipSitef == ipSitef && other.storeId == storeId && other.terminalId == terminalId && other.paramsAdd == paramsAdd && other.companyDocument == companyDocument && other.comExternal == comExternal && other.isDoubleValidation == isDoubleValidation && other.otp == otp && other.enabledTransactions == enabledTransactions && other.automationDocument == automationDocument && other.tokenRegistroTls == tokenRegistroTls;
   }
 
   @override
   int get hashCode {
-    return modalidade.hashCode ^ value.hashCode ^ couponNumber.hashCode ^ dateFiscal.hashCode ^ hourFiscal.hashCode ^ operador.hashCode ^ params.hashCode ^ ipSitef.hashCode ^ storeId.hashCode ^ terminalId.hashCode ^ paramsAdd.hashCode ^ companyDocument.hashCode ^ comExternal.hashCode ^ isDoubleValidation.hashCode ^ otp.hashCode ^ enabledTransactions.hashCode ^ automationDocument.hashCode;
+    return modalidade.hashCode ^ value.hashCode ^ couponNumber.hashCode ^ dateFiscal.hashCode ^ hourFiscal.hashCode ^ operador.hashCode ^ params.hashCode ^ ipSitef.hashCode ^ storeId.hashCode ^ terminalId.hashCode ^ paramsAdd.hashCode ^ companyDocument.hashCode ^ comExternal.hashCode ^ isDoubleValidation.hashCode ^ otp.hashCode ^ enabledTransactions.hashCode ^ automationDocument.hashCode ^ tokenRegistroTls.hashCode;
   }
 }

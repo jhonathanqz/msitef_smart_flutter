@@ -1,3 +1,7 @@
+## 1.0.2
+
+- Add new propertie tokenRegistroTls
+
 ## 1.0.1
 
 - Update Readme

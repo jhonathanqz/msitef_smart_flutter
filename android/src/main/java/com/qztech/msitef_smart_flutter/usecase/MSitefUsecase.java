@@ -42,6 +42,8 @@ public class MSitefUsecase {
         String transactionsMsitef = call.argument("enabledTransactions");
         String autDocument = call.argument("automationDocument");
         String terminalMSitef = call.argument("terminalId");
+        String tokenRegistroTls = call.argument("tokenRegistroTls");
+
         inicializeIntentMSitef();
         intentMSitef.putExtra("tipoPinpad", "ANDROID_USB");
         intentMSitef.putExtra("empresaSitef", storeMSitef);
@@ -55,6 +57,10 @@ public class MSitefUsecase {
 
         if (!transactionsMsitef.equals("")) {
             intentMSitef.putExtra("transacoesHabilitadas", transactionsMsitef);
+        }
+        
+        if (!tokenRegistroTls.equals("")) {
+            intentMSitef.putExtra("tokenRegistroTls", tokenRegistroTls);
         }
 
         if (!comExternaMsitef.equals("")) {

@@ -1,7 +1,7 @@
-import 'package:msitef_smart_flutter/payments/model/params/msitef_params.dart';
 import 'package:msitef_smart_flutter/payments/model/params/msitef_type.dart';
 import 'package:flutter/material.dart';
 import 'package:msitef_smart_flutter/msitef_smart_flutter.dart';
+import 'package:msitef_smart_flutter/payments/model/params/transaction_params.dart';
 
 class PaymentPage extends StatefulWidget {
   const PaymentPage({Key? key}) : super(key: key);
@@ -51,7 +51,19 @@ class _PaymentPageState extends State<PaymentPage> {
                 child: const Text("Débito"),
                 onPressed: () {
                   MSitefSmart.instance().payment.mSitefTransaction(
-                        mSitefParams: MSitefParams(modalidade: MSitefType.debit, value: '10'),
+                        transactionParams: TransactionParams(
+                          modalidade: MSitefType.debit,
+                          value: '10',
+                          couponNumber: DateTime.now().toIso8601String(),
+                          dateFiscal: '2021-09-01',
+                          hourFiscal: '12:00:00',
+                          operador: 'teste',
+                          ipSitef: '192.168.0.165',
+                          storeId: '00000000',
+                          terminalId: '00000001',
+                          companyDocument: '00000000000000',
+                          automationDocument: '00000000000000',
+                        ),
                       );
                 },
               ),
@@ -59,7 +71,19 @@ class _PaymentPageState extends State<PaymentPage> {
                 child: const Text("Crédito"),
                 onPressed: () {
                   MSitefSmart.instance().payment.mSitefTransaction(
-                        mSitefParams: MSitefParams(modalidade: MSitefType.credit, value: '10'),
+                        transactionParams: TransactionParams(
+                          modalidade: MSitefType.credit,
+                          value: '15',
+                          couponNumber: DateTime.now().toIso8601String(),
+                          dateFiscal: '2021-09-01',
+                          hourFiscal: '12:00:00',
+                          operador: 'teste',
+                          ipSitef: '192.168.0.165',
+                          storeId: '00000000',
+                          terminalId: '00000001',
+                          companyDocument: '00000000000000',
+                          automationDocument: '00000000000000',
+                        ),
                       );
                 },
               ),
@@ -67,7 +91,19 @@ class _PaymentPageState extends State<PaymentPage> {
                 child: const Text("Pix"),
                 onPressed: () {
                   MSitefSmart.instance().payment.mSitefTransaction(
-                        mSitefParams: MSitefParams(modalidade: MSitefType.pix, value: '10'),
+                        transactionParams: TransactionParams(
+                          modalidade: MSitefType.pix,
+                          value: '20',
+                          couponNumber: DateTime.now().toIso8601String(),
+                          dateFiscal: '2021-09-01',
+                          hourFiscal: '12:00:00',
+                          operador: 'teste',
+                          ipSitef: '192.168.0.165',
+                          storeId: '00000000',
+                          terminalId: '00000001',
+                          companyDocument: '00000000000000',
+                          automationDocument: '00000000000000',
+                        ),
                       );
                 },
               ),
@@ -75,7 +111,19 @@ class _PaymentPageState extends State<PaymentPage> {
                 child: const Text("Voucher"),
                 onPressed: () {
                   MSitefSmart.instance().payment.mSitefTransaction(
-                        mSitefParams: MSitefParams(modalidade: MSitefType.voucher, value: '10'),
+                        transactionParams: TransactionParams(
+                          modalidade: MSitefType.voucher,
+                          value: '30',
+                          couponNumber: DateTime.now().toIso8601String(),
+                          dateFiscal: '2021-09-01',
+                          hourFiscal: '12:00:00',
+                          operador: 'teste',
+                          ipSitef: '192.168.0.165',
+                          storeId: '00000000',
+                          terminalId: '00000001',
+                          companyDocument: '00000000000000',
+                          automationDocument: '00000000000000',
+                        ),
                       );
                 },
               ),

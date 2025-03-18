@@ -8,6 +8,7 @@ import '../payments/model/params/msitef_params.dart';
 import '../payments/model/tef_transaction_model.dart';
 import '../payments/model/tef_transaction_response.dart';
 import '../payments/enum/sitef_modality.dart';
+import 'model/params/transaction_params.dart';
 
 //Fixed channel name
 // ignore: constant_identifier_names
@@ -26,7 +27,7 @@ class Payment {
   };
 
   Future<TefTransactionResponseMSitef?> mSitefTransaction({
-    required MSitefParams mSitefParams,
+    required TransactionParams transactionParams,
   }) async {
     try {
       Map<String, dynamic> lineToMethodChannel({
@@ -71,26 +72,26 @@ class Payment {
         };
       }
 
-      final modality = int.tryParse(_modalityMap[mSitefParams.modalidade.modality] ?? '0') ?? 0;
+      final modality = int.tryParse(_modalityMap[transactionParams.modalidade.modality] ?? '0') ?? 0;
 
       final paramsTransaction = lineToMethodChannel(
         modalidade: modality,
-        value: mSitefParams.value,
-        couponNumber: mSitefParams.couponNumber,
-        dateFiscal: mSitefParams.dateFiscal,
-        hourFiscal: mSitefParams.hourFiscal,
-        operador: mSitefParams.operador,
-        ipSitef: mSitefParams.ipSitef,
-        storeId: mSitefParams.storeId,
-        terminalId: mSitefParams.terminalId,
-        paramsAdd: mSitefParams.paramsAdd,
-        companyDocument: mSitefParams.companyDocument,
-        comExternal: mSitefParams.comExternal,
-        isDoubleValidation: mSitefParams.isDoubleValidation,
-        otp: mSitefParams.otp,
-        enabledTransactions: mSitefParams.enabledTransactions,
-        automationDocument: mSitefParams.automationDocument,
-        tokenRegistroTls: mSitefParams.tokenRegistroTls ?? '',
+        value: transactionParams.value,
+        couponNumber: transactionParams.couponNumber,
+        dateFiscal: transactionParams.dateFiscal,
+        hourFiscal: transactionParams.hourFiscal,
+        operador: transactionParams.operador,
+        ipSitef: transactionParams.ipSitef,
+        storeId: transactionParams.storeId,
+        terminalId: transactionParams.terminalId,
+        paramsAdd: transactionParams.paramsAdd,
+        companyDocument: transactionParams.companyDocument,
+        comExternal: transactionParams.comExternal,
+        isDoubleValidation: transactionParams.isDoubleValidation,
+        otp: transactionParams.otp,
+        enabledTransactions: transactionParams.enabledTransactions,
+        automationDocument: transactionParams.automationDocument,
+        tokenRegistroTls: transactionParams.tokenRegistroTls ?? '',
       );
 
       final resultTransaction = await channel.invokeMethod(

@@ -1,6 +1,6 @@
 name: msitef_smart_flutter
 description: Plugin Flutter para integrar sua aplicação com o SDK Android do MSitef para meios de pagamento.
-version: 1.0.2
+version: 1.1.0
 repository: https://github.com/jhonathanqz/msitef_smart_flutter
 
 environment:

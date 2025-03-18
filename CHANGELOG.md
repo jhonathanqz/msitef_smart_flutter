@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Add new class `TransactionParams`
+
 ## 1.0.2
 
 - Add new propertie tokenRegistroTls

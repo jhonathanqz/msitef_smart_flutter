@@ -3,11 +3,11 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+
+import '../payments/enum/sitef_modality.dart';
 import '../payments/helper/tef_helper.dart';
-import '../payments/model/params/msitef_params.dart';
 import '../payments/model/tef_transaction_model.dart';
 import '../payments/model/tef_transaction_response.dart';
-import '../payments/enum/sitef_modality.dart';
 import 'model/params/transaction_params.dart';
 
 //Fixed channel name

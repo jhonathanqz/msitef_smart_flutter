@@ -40,7 +40,7 @@ Necessário ter instalado o `MSitef` para que funcione corretamente. Para obter 
 
 ## :rocket: Tecnologias
 
-Para que o plugin funcione corretamente é necessário ter o aplicativo `MSitef` instalado na máquina. Este é fornecido pela própria empresa que está lhe fornecendo o TEF.
+#### Para que o plugin funcione corretamente é necessário ter o aplicativo `MSitef` instalado na máquina. Este é fornecido pela própria empresa que está lhe fornecendo o TEF.
 
 - [Flutter](https://docs.flutter.dev/)
 
@@ -56,21 +56,57 @@ Débito
 
 ```
 MSitefSmart.instance().payment.mSitefTransaction(
-                        mSitefParams: MSitefParams(modalidade: MSitefType.debit, value: '10'),
+                         transactionParams: TransactionParams(
+                          modalidade: MSitefType.debit,
+                          value: '10',
+                          couponNumber: DateTime.now().toIso8601String(),
+                          dateFiscal: '2021-09-01',
+                          hourFiscal: '12:00:00',
+                          operador: 'teste',
+                          ipSitef: '192.168.0.165',
+                          storeId: '00000000',
+                          terminalId: '00000001',
+                          companyDocument: '00000000000000',
+                          automationDocument: '00000000000000',
+                        ),)
 ```
 
 Crédito:
 
 ```
 MSitefSmart.instance().payment.mSitefTransaction(
-                        mSitefParams: MSitefParams(modalidade: MSitefType.credit, value: '10'),
+                        transactionParams: TransactionParams(
+                          modalidade: MSitefType.credit,
+                          value: '10',
+                          couponNumber: DateTime.now().toIso8601String(),
+                          dateFiscal: '2021-09-01',
+                          hourFiscal: '12:00:00',
+                          operador: 'teste',
+                          ipSitef: '192.168.0.165',
+                          storeId: '00000000',
+                          terminalId: '00000001',
+                          companyDocument: '00000000000000',
+                          automationDocument: '00000000000000',
+                        ),)
 ```
 
 Pix:
 
 ```
 MSitefSmart.instance().payment.mSitefTransaction(
-                        mSitefParams: MSitefParams(modalidade: MSitefType.pix, value: '10'),
+                        transactionParams: TransactionParams(
+                          modalidade: MSitefType.pix,
+                          value: '10',
+                          couponNumber: DateTime.now().toIso8601String(),
+                          dateFiscal: '2021-09-01',
+                          hourFiscal: '12:00:00',
+                          operador: 'teste',
+                          ipSitef: '192.168.0.165',
+                          storeId: '00000000',
+                          terminalId: '00000001',
+                          companyDocument: '00000000000000',
+                          automationDocument: '00000000000000',
+                        ),)
 ```
 
 #### Todas as transações iram retornar suas informações na classe `TefTransactionResponseMSitef`.
